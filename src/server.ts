@@ -4,6 +4,8 @@ import bodyParser from 'body-parser';
 import logging from './config/logging';
 import config from './config/config';
 import sampleRoutes from './routes/sample';
+import authRoutes from './routes/auth';
+import auth from './controllers/auth';
 
 
 const NAMESPACE = 'server';
@@ -39,7 +41,8 @@ router.use((req, res, next) => {
 });
 
 /* Routes */
-router.use('/sample', sampleRoutes);
+router.use('/sample', auth.authenticateToken , sampleRoutes);
+router.use('/auth', authRoutes);
 
 /* Error handling */
 router.use((req, res, next) => {

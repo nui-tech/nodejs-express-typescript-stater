@@ -1,0 +1,12 @@
+
+GET http://localhost:1337/sample/ping
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoibnVpIiwiaWF0IjoxNjU1NjQyMzc1LCJleHAiOjE2NTU2NDMyNzV9.V9jaDqCOWzhVF06D2EfCnBPGHBkJO_Vvf5IIqLRaYsQ
+
+
+###
+POST http://localhost:1337/auth/login
+Content-Type: application/json
+  
+{
+  "username": "nui"
+}
